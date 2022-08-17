@@ -6,11 +6,12 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release -Dspoa_build_executable=ON ..
 make
 cd ..
-if [ -f ../TRiCoLOR/REFER/consensus.cpp ]
+
+if [ -f ../REFER/consensus.cpp ]
 then
-    mv ../TRiCoLOR/REFER/consensus.cpp .
+    mv ../REFER/consensus.cpp .
     g++ consensus.cpp -std=c++11 -Iinclude/ -Lbuild/lib/ -lspoa -o consensus
-    mv consensus ../TRiCoLOR/REFER/ && rm consensus.cpp
+    mv consensus ../REFER/ && rm consensus.cpp
 else
     echo "can't find consensus.cpp, please check your path"
 fi
